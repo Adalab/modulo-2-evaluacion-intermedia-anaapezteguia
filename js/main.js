@@ -6,8 +6,10 @@ const attemptElement = document.querySelector('.js-trialCounter');
 const noticeElement = document.querySelector('.js-notice');
 const messageElement = document.querySelector('.js-message');
 const attemptsNumber = attemptElement.innerHTML;
+// const customMessage = messageElement.innerHTML;
 const randomNumber = getRandomNumber(100);
 let trialCounter = 0;
+
 
 console.log(randomNumber);
 
@@ -16,31 +18,30 @@ function getRandomNumber(max) {
 }
 function handleCounter() {
     trialCounter++;
+    attemptElement.innerHTML = trialCounter;
 }
 function handleReset() {
     location.reload();
 }
 
 
-function handleTrialButton (ev) {
+function handleTrialButton(ev) {
     ev.preventDefault()
     handleCounter()
     const myBet = parseInt(betElement.value);
-    // console.log(myBet);
-    if (myBet >100 || myBet <= 0) {
-        attemptElement.innerHTML = trialCounter;
+    if (myBet > 100 || myBet <= 0) {
         messageElement.innerHTML = 'Tu número debe estar entre 1 y 100';
     } else if (myBet === randomNumber) {
-        attemptElement.innerHTML = trialCounter;
         messageElement.innerHTML = '¡¡¡Has ganado campeona!!!';
     } else if (myBet > randomNumber) {
-        attemptElement.innerHTML = trialCounter;
         messageElement.innerHTML = 'Tu número es demasiado alto';
     } else if (myBet < randomNumber) {
-        attemptElement.innerHTML = trialCounter;
         messageElement.innerHTML = 'Tu número es demasiado bajo';
-    } else {
-        attemptElement.innerHTML = trialCounter;
+    } else if (isNaN(myBet)) {
+        messageElement.innerHTML = 'No hagas trampas, he dicho un número ;)';
+    } else if (myBet === '') {
+        messageElement.innerHTML = 'Tienes que poner un número';
+    }else {
         messageElement.innerHTML = 'Inténtalo de nuevo :)';
     }
     
