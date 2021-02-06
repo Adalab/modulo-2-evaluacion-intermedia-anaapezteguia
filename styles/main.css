@@ -67,3 +67,6 @@
   line-height: 20px;
   color: #666;
 }
+.hidden {
+  display: none;
+}

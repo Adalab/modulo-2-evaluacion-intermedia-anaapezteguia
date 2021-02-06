@@ -23,27 +23,30 @@ function handleCounter() {
 function handleReset() {
     location.reload();
 }
-
+let messageText ='';
+function handleMessage() {
+    const myBet = parseInt(betElement.value);   
+    if (myBet > 100 || myBet <= 0) {
+        messageText = 'Tu número debe estar entre 1 y 100';
+    } else if (myBet === randomNumber) {
+        messageText = '¡¡¡Has ganado campeona!!!';
+    } else if (myBet > randomNumber) {
+        messageText = 'Tu número es demasiado alto';
+    } else if (myBet < randomNumber) {
+        messageText = 'Tu número es demasiado bajo';
+    } else if (isNaN(myBet) || (myBet === '')) {
+        messageText = 'Tienes que escribir un número ;)';
+    }else {
+        messageText = 'Inténtalo de nuevo :)';
+    }
+    noticeElement.classList.remove('hidden');
+    messageElement.innerHTML = messageText;
+}
 
 function handleTrialButton(ev) {
-    ev.preventDefault()
-    handleCounter()
-    const myBet = parseInt(betElement.value);
-    if (myBet > 100 || myBet <= 0) {
-        messageElement.innerHTML = 'Tu número debe estar entre 1 y 100';
-    } else if (myBet === randomNumber) {
-        messageElement.innerHTML = '¡¡¡Has ganado campeona!!!';
-    } else if (myBet > randomNumber) {
-        messageElement.innerHTML = 'Tu número es demasiado alto';
-    } else if (myBet < randomNumber) {
-        messageElement.innerHTML = 'Tu número es demasiado bajo';
-    } else if (isNaN(myBet)) {
-        messageElement.innerHTML = 'No hagas trampas, he dicho un número ;)';
-    } else if (myBet === '') {
-        messageElement.innerHTML = 'Tienes que poner un número';
-    }else {
-        messageElement.innerHTML = 'Inténtalo de nuevo :)';
-    }
+    ev.preventDefault();
+    handleCounter();
+    handleMessage();
     
 }
 trialElement.addEventListener ('click', handleTrialButton);
