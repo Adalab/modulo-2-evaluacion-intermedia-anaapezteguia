@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>
-        Adalab | Evaluación intermedia módulo 2 · Javascript | Ana Apezteguía Martínez
+      Adalab | Evaluación intermedia módulo 2 · Javascript | Ana Apezteguía
+      Martínez
     </title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="" method="post" class="myForm js-form">
-        <h1 class="title">Adivina el número</h1>
-        <fieldset class="fieldset">
-            <label for="setNumber" class="label">Introduce aquí tu número</label>
-            <input placeholder ="Introduce aquí tu número" type="number" id="setNumber" name="setNumber" class="input js-myBet">
-            <input type="submit" class="button start js-trialBtn" value="Prueba" />
-            <input type="reset" class="button js-resetBtn" value="Borra" />
-        </fieldset>
-        <div class="show">
-            <h3 class="subtitle">Pista:</h3>
-            <p class="text js-myClue">Escribe el número y dale a prueba</p>
-        </div>
-        <div class="show">
-            <h3 class="subtitle">Número de intentos:</h3>
-            <p class="text js-trialCounter">0</p>
-        </div>
-        <div class="message js-notice hidden">
-            <h3 class="subtitle js-message"></h3>
-        </div>
+      <h1 class="title">Adivina el número</h1>
+      <fieldset class="fieldset">
+        <label for="setNumber" class="label">Introduce aquí tu número</label>
+        <input
+          placeholder="Introduce aquí tu número"
+          type="number"
+          id="setNumber"
+          name="setNumber"
+          class="input js-myBet"
+        />
+        <input type="submit" class="button start js-trialBtn" value="Prueba" />
+        <input type="reset" class="button js-resetBtn" value="Borra" />
+      </fieldset>
+      <div class="show">
+        <h3 class="subtitle">Pista:</h3>
+        <p class="text js-myClue">Escribe el número y dale a prueba</p>
+      </div>
+      <div class="show">
+        <h3 class="subtitle">Número de intentos:</h3>
+        <p class="text js-trialCounter">0</p>
+      </div>
+      <div class="message js-notice hidden">
+        <h3 class="subtitle js-message"></h3>
+      </div>
     </form>
 
-
     <script type="text/javascript" src="./js/main.js"></script>
-</body>
+  </body>
 </html>
